@@ -1,0 +1,395 @@
+
+:root {
+  --primary-light: #14cfae;
+  --primary-dark: #16e0bd;
+  --black-lighter: #333;
+  --black-normal: #303030;
+  --black-bold: #2e2e2e;
+  --black-bolder: #141414;
+  --black-heavy: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro";
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1em 1.5em;
+  display: flex;
+  background-color: #fff;
+  opacity: 0.9;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+header:hover {
+  opacity: 1;
+}
+
+main {
+  padding-top: 1em;
+  margin-top: 6em;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+main > section {
+  padding: 2.5em 2.5em;
+  scroll-margin-top: 5em;
+}
+
+#menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translateX(-100vw);
+  z-index: 100;
+  display: flex;
+  place-items: center;
+  background-color: #2f2f2f;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0.8;
+  width: 100vw;
+  height: 100vh;
+  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+#menu-btn {
+  z-index: 1000;
+}
+
+#menu-btn .hamburger {
+  transition: all 250ms ease-in-out;
+}
+
+#menu-btn.opened .hamburger {
+  transform: rotate(0.625turn);
+  color: white;
+}
+
+#menu-btn.opened .hamburger > rect:first-child {
+  transform: rotate(90deg) translate(0px, -33px);
+}
+
+#menu-btn.opened .hamburger > rect:last-child {
+  width: 0;
+  opacity: 0;
+}
+
+
+
+#menu a {
+  text-decoration: none;
+  color: white;
+}
+
+#menu a:hover {
+  color: var(--primary-light);
+}
+
+#menu ul {
+  display: flex;
+  height: 90%;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.reveal {
+  transform: translateX(0) !important;
+}
+
+.container {
+  overflow: auto;
+  width: 78.125%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-block: 2em;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+picture.dev-jane {
+  aspect-ratio: 1 / 1;
+}
+
+picture.dev-jane > img {
+  box-shadow: 14px 14px 20px #303030;
+  aspect-ratio: 1 / 1;
+}
+
+.logo {
+  font-size: 3.5rem;
+}
+
+.hamburger {
+  width: 48px;
+}
+
+.btn {
+  background-color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--black-lighter);
+  margin-top: 1.4em;
+  padding: 0.8em 1.6em;
+  display: inline-block;
+  width: 45%;
+  align-self: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: lighter;
+  margin-bottom: 0.3em;
+}
+
+.name {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3.75rem;
+  margin-top: 0em;
+  margin-bottom: 0.3em;
+}
+
+
+h1 + p, h2 + p {
+  font-family: "Source Code Pro";
+  padding: 0.4em 1.2em;
+}
+
+section:not(.dark) h1 + p, section:not(.dark) h2 + p {
+  background-color: var(--primary-light);
+  /* padding-top: 0.8em; */
+}
+
+h1 + p {
+  font-size: 1.6825rem;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 2.7px;
+  /* width: 88%; */
+}
+
+h2 + p {
+  font-size: 1.5rem;
+}
+
+.dark h2, .dark h2 + p {
+  font-weight: 900;
+}
+
+.dark h2 + p {
+}
+
+hr {
+  width: 15%;
+}
+
+.dark {
+  background-color: var(--black-bold);
+  color: white;
+}
+
+.dark h2 {
+  color: var(--primary-light);
+}
+
+#what-i-do > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.work {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+picture > img {
+  width: 100%;
+  height: 100%;
+}
+
+.work a {
+  background-color: var(--primary-light);
+  overflow: hidden;
+  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.work a:focus {
+  position: relative;
+  z-index: 2;
+}
+
+.work a:hover, .work a:focus {
+  transform: scale(1.2);
+}
+
+.work a picture {
+  transition: opacity 250ms linear;
+}
+
+.work a:hover picture, .work a:focus picture {
+  opacity: .75;
+}
+
+
+footer {
+  padding-block: 2em;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: var(--black-bolder);
+  color: var(--primary-dark);
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    text-align: left;
+  }
+
+  section.dark {
+    text-align: center;
+  }
+
+  img {
+    max-width: none;
+  }
+
+  .container {
+    width: auto;
+    max-width: 1300px;
+  }
+
+  #intro > div {
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(13, 1fr);
+  }
+
+  picture.dev-jane {
+    grid-row: 1 / -1;
+    grid-column: 2 / span 5;
+  }
+
+  section:not(.dark) h1 + p, section:not(.dark) h2 + p {
+    font-size: clamp(1.125rem, 0.9vw + 0.75rem, 1.5625rem);
+  }
+
+  #intro > .container h1 {
+    font-size: clamp(3rem, 5.8vw + 0.3rem, 8.5rem);
+    justify-self: end;
+    line-height: 0.9;
+    margin: 0;
+    /* 
+    * display: flex;
+    justify-content: end;
+    align-items: end;
+    */
+    grid-row: 2 / span 3;
+    grid-column: 8 / -1;
+  }
+
+  .btn {
+    width: 18%;
+  }
+
+  .hr-container {
+    flex-basis: 100%;
+  }
+
+  #intro > .container p {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0;
+    grid-row: 5 / span 1;
+    grid-column: 1 / -1;
+  }
+
+  main > section:nth-child(2) {
+    background: var(--black-bolder) url("images/christopher-gower-m_HRfLhgABo-unsplash.png");
+    background-size: cover;
+  }
+
+  #what-i-do > .container {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  #who-i-am > .container {
+    display: grid;
+    grid-template: repeat(6, 15%) / repeat(20, 5%);
+  }
+
+  #who-i-am > .container h2 {
+    margin: 0;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 8;
+  }
+
+  #who-i-am > .container h2 + p {
+    margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 2 / span 1;
+    display: flex;
+    align-items: center;
+    text-align: initial;
+  }
+
+  #who-i-am > .container > div {
+    grid-row: 3 / -1;
+    grid-column: 1 / span 10;
+  }
+
+  #who-i-am > .container > :not(picture) {
+    padding-left: 60px;
+  }
+
+  #who-i-am > .container > picture {
+    grid-row: 1 / -1;
+    grid-column: 14 / -2;
+  }
+
+  #what-i-do > .container > h2 {
+    flex-basis: 100%;
+  }
+
+  #what-i-do > .container > section {
+    flex-basis: 30%;
+  }
+
+  .work {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+
+
